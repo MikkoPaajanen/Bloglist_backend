@@ -13,6 +13,7 @@ const favoriteBlog = (blogs) => {
   return blogs.find(blog => blog.likes === mostLikes())
 }
 
+
 module.exports = {
   dummy,
   totalLikes,
