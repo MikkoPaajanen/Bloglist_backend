@@ -11,6 +11,14 @@ test('blogs are returned as json', async () => {
     .expect('Content-Type', /application\/json/)
 })
 
+describe('blogs use id instead of _id', () => {
+  test('id', async () => {
+    const response = await api.get('/api/blogs')
+    console.log(response.body[0].id)
+    expect(response.body[0].id).toBeDefined()
+  })
+})
+
 
 
 afterAll(() => {
