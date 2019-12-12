@@ -23,7 +23,7 @@ describe('blogs use id instead of _id', () => {
     await api
       .post('/api/blogs')
       .send(newBlog)
-      .expect(200)
+      .expect(201)
     const response = await api.get('/api/blogs')
     console.log(response.body[0].id)
     expect(response.body[0].id).toBeDefined()
@@ -41,7 +41,7 @@ describe('HTTP POST adds blog', () => {
     await api
       .post('/api/blogs')
       .send(newBlog)
-      .expect(200)
+      .expect(201)
     const response = await api.get('/api/blogs')
     expect(response.body.length).toBe(1)
   })
@@ -58,13 +58,13 @@ describe('likes are empty', () => {
     await api
       .post('/api/blogs')
       .send(newBlog)
-      .expect(200)
+      .expect(201)
     const response = await api.get('/api/blogs')
     console.log('response.body', response.body[0].likes)
     expect(response.body[0].likes).toBe(0)
   })
 })
-/*
+
 describe('includes title and url', () => {
   test('includes title and url', async () => {
     const newBlog = {
@@ -77,11 +77,9 @@ describe('includes title and url', () => {
       .post('/api/blogs')
       .send(newBlog)
       .expect(400)
-    const response = await api.get('/api/blogs')
-    expect(response.body.length).toBe(undefined)
   })
 })
-*/
+
 beforeEach(async () => {
   await Blog.deleteMany({})
 
