@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-
+// specifying how data is saved to database
 const blogSchema = new mongoose.Schema({
   title: { type: String, required: true },
   author: String,
@@ -8,6 +8,7 @@ const blogSchema = new mongoose.Schema({
   likes: Number
 })
 
+// transforming data retreived from database
 blogSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()

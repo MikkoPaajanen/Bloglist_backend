@@ -7,6 +7,7 @@ const blogRouter = require('./controllers/blogs')
 const mongoose = require('mongoose')
 const middelware = require('./utils/middelware')
 
+// connecting to database MongoDB Atlas
 mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
 
 app.use(cors())
