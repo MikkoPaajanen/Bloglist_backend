@@ -22,10 +22,24 @@ const mostBlogs = (blogs) => {
   console.log({ author: who[0], blogs: who[1] })
   return { author: who[0], blogs: who[1] }
 }
+/*
+// function that finds which author has most likes total in blogs
+const mostLikes = (blogs) => {
+  const who = _(blogs).groupBy('author')
+    .map((objects, key) => {
+      return {
+        'author': key,
+        'likes': _.sumBy(objects, 'likes')
+      }
+    })
+    .value()
+  console.log('who', who)
+}*/
 
 module.exports = {
   dummy,
   totalLikes,
   favoriteBlog,
-  mostBlogs
+  mostBlogs,
+  //mostLikes
 }
