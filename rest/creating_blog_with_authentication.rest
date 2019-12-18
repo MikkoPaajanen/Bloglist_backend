@@ -1,0 +1,11 @@
+post http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2tvIiwiaWQiOiI1ZGY4Yjk0Y2M1NmQyNTU1YmVkYWE3ZDUiLCJpYXQiOjE1NzY2NjA3MDF9.mhYGmPiUxdxU1S_kpdpDOqhroB_bFtJgqHBC9x3InKE
+
+{
+  "title": "Holiday",
+	"author": "WorkingMan",
+	"url": "http://superholiday.com",
+	"likes": 5,
+	"userId": "5df8b94cc56d2555bedaa7d5"
+}
