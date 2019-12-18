@@ -201,7 +201,7 @@ describe('mostBlogs', () => {
     )
   })
 })
-/*
+
 // test to see if function who has most likes returns the one
 describe('mostLikes', () => {
   const blogs = [
@@ -265,4 +265,3 @@ describe('mostLikes', () => {
     )
   })
 })
-*/

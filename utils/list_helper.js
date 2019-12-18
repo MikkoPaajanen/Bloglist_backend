@@ -22,24 +22,26 @@ const mostBlogs = (blogs) => {
   console.log({ author: who[0], blogs: who[1] })
   return { author: who[0], blogs: who[1] }
 }
-/*
+
 // function that finds which author has most likes total in blogs
 const mostLikes = (blogs) => {
-  const who = _(blogs).groupBy('author')
-    .map((objects, key) => {
-      return {
-        'author': key,
-        'likes': _.sumBy(objects, 'likes')
-      }
-    })
+  const who = _(blogs)
+    .groupBy('author')
+    .map((objects, author) => ({
+      author,
+      'likes': _.sumBy(objects, 'likes')
+    }))
     .value()
   console.log('who', who)
-}*/
+  const max = _.maxBy(who, 'likes')
+  console.log('max', max)
+  return max
+}
 
 module.exports = {
   dummy,
   totalLikes,
   favoriteBlog,
   mostBlogs,
-  //mostLikes
+  mostLikes
 }
